@@ -19,7 +19,7 @@
 \usepackage{enumerate}                  %podpora pro zmenu cislovani
 \usepackage{fancyhdr}                   %vlastni zahlavi a~zapati
 \usepackage{graphicx}                   %podpora grafiky
-%\graphicspath{{img/}}                   %vychozi adresar s~obrazky
+\graphicspath{{Materialy/}}                   %vychozi adresar s~obrazky
 \usepackage{caption}                    %popisky
 \usepackage{subcaption}                 %podpopisky
 \usepackage{siunitx}
@@ -78,9 +78,9 @@
 %_____________________________|___________________________|_____________________________%
 %                             
 
-\newcommand{\nazev}{MĚŘENÍ MALÝCH PROUDŮ}                                                        %
+\newcommand{\nazev}{Měření parametrů vyšších komunikačních vrstev internetové přípojky}                                                        %
 \newcommand{\jmeno}{Jakub Dvořák}                                                     %
-\newcommand{\datum}{18.10.2020}                                                              %
+\newcommand{\datum}{\today}                                                              %
 %---------------------------------------------------------------------------------------%
 
 
@@ -152,65 +152,16 @@
 
 %------------------------------------ VLASTNÍ TEXT ------------------------------------%
 
+\subsection*{Zhodnocení naměřených hodnot}
 
 
-\section{Úkol měření}
-\label{zadani}
-\begin{enumerate}
-    \item V zapojení podle obr. 1 změřte proud germaniovou diodou v propustném směru v oblasti malých napětí (20 až 100 mV) v pěti bodech charakteristiky:\label{jedna}
-    \begin{enumerate}[label=\alph*)]
-        \item analogovým mikroampérmetrem,\label{analog}
-        \item číslicovým mikroampérmetrem na různých rozsazích,\label{digital}
-        \item pomocí převodníku proud - napětí s operačním zesilovačem, u něhož před měřením určete velikost odporu zpětnovazebního rezistoru R tak, aby převod proud - napětí byl 10\texp{-5} A/V.
-    \end{enumerate}
-    \item Naměřené hodnoty vyneste do společného grafu.
-    \item Při měření dle \ref{jedna}\ref{analog} a \ref{jedna}\ref{digital} určete chybu metody způsobenou vnitřním odporem ampérmetru.
-    \item Z naměřených hodnot určete \textbf{vnitřní odpory použitých mikroampérmetrů}.
-\end{enumerate}
+\subsection*{Podmínky měření}
 
-\section{Schéma zapojení}
-\label{schema_zapojeni}
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=.8\textwidth]{schema.png}
-    \caption{Zapojení pro měření malých proudů \cite{navod}}
-    \label{fig:schema}
-\end{figure}
+\subsection*{Zhodnocení vhodnosti internetové přípojky pro NGA a~zařazení do příslušné NGA kategorie}
 
+\subsection*{Zhodnocení vhodnosti použité přenosové technologie k~poskytovateli připojení pro koncept NGA}
 
-\section{Seznam použitých přístrojů}
-\begin{itemize}
-    \item 
-\end{itemize}
-
-\section{Teoretický úvod}
-
-
-
-\section{Naměřené hodnoty}
-
-
-
-\section{Zpracování naměřených hodnot}
-
-
-\section{Závěrečné vyhodnocení}
-
-
-
-%--- LITERATURA a~ZDROJE (povinne) ---
-\clearpage
-\renewcommand{\refname}{Seznam použité literatury a~zdrojů informací} 
-%\section*{Seznam použité literatury a~zdrojů informací}
-\phantomsection %pridej odkaz do PDF zalozek
-\addcontentsline{toc}{section}{Seznam použité literatury a~zdrojů informací}
-
-\begin{thebibliography}{99}
-
-%----------------------------------------------------
-\subsection*{Seznam použitých internetových zdrojů}
-    \bibitem{navod} Návod k laboratorní úloze
-    
-\end{thebibliography}
-
+\subsection*{Kontrolní otázky}
+\subsubsection*{Proč o kvalitě internetové přípojky a obecněji i o poskytované přenosové službě, má pro koncového uživatele větší vypovídající hodnotu běžně dostupná rychlost, než rychlost poskytnutá diagnostikou síťového prvku.}
+\subsubsection*{Nabízí Váš poskytovatel tarif/typ připojení, které by mohlo splňovat podmínky přípojek NGA 100+? Pokud to lze dohledat, uveďte neakční cenu a technologii.}
 \end{document}
