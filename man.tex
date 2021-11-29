@@ -1,0 +1,216 @@
+\documentclass[a4paper,12pt]{article}   % papír A4, písmo 12 bodu
+\usepackage[utf8x]{inputenc}            %kodovaní UTF-8
+\usepackage{ucs}                        %kodovani unicode
+\usepackage[czech]{babel}               %podpora cestiny
+\usepackage[T1]{fontenc}                %pouzij variantu pisma T1 (hacky, carky)
+\usepackage[left=2.5cm,right=1.5cm,top=2.5cm,bottom=2.5cm]{geometry} %okraje stranky
+\usepackage{amsmath,amsfonts,amssymb}   %podpora matematiky
+\usepackage{gensymb,marvosym}           %symboly celsius (\celsius) apod.
+%\usepackage{mathptmx}                   %font Times New Roman s~podporou matematiky
+\usepackage{times}                      %font Times New Roman (matematika pismem Computer Modern) 
+\usepackage{parskip}                    %mezera mezi odstavci
+%\usepackage[document]{ragged2e}         %text zarovany vlevo
+\usepackage[none]{hyphenat} \sloppy     %slova nedelit a~nepretekat
+\usepackage{titlesec}
+\setcounter{secnumdepth}{4}
+\clubpenalty 10000                      %kontrolovat sirotky
+\widowpenalty 10000                     %kontrolovat vdovy
+\usepackage{setspace} \onehalfspacing   %podpora pro zmenu radkovani + radkovani 1,5
+\usepackage{enumerate}                  %podpora pro zmenu cislovani
+\usepackage{fancyhdr}                   %vlastni zahlavi a~zapati
+\usepackage{graphicx}                   %podpora grafiky
+%\graphicspath{{img/}}                   %vychozi adresar s~obrazky
+\usepackage{caption}                    %popisky
+\usepackage{subcaption}                 %podpopisky
+\usepackage{siunitx}
+\usepackage{MnSymbol,wasysym}
+\usepackage[shortlabels]{enumitem}
+\usepackage{amsmath}
+\usepackage{lastpage}                   %zjištění poslední stránky \pageref{LastPage}
+\usepackage{float}                      
+\usepackage{url}
+\usepackage[unicode]{hyperref}          %klikaci odkazy v textu
+\usepackage{mhchem}
+\usepackage{multirow}
+
+\usepackage{halloweenmath}
+
+
+\titleclass{\subsubsubsection}{straight}[\subsection]
+\newcounter{subsubsubsection}[subsubsection]
+\renewcommand\thesubsubsubsection{\thesubsubsection.\arabic{subsubsubsection}}
+\renewcommand\theparagraph{\thesubsubsubsection.\arabic{paragraph}} % optional; useful if paragraphs are to be numbered
+
+
+%------------------------ čtvrtá a pátá úroveň nadpisu ---------------------------
+
+\titleformat{\subsubsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsubsection}{1em}{}
+\titlespacing*{\subsubsubsection}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\makeatletter
+
+\renewcommand\paragraph{\@startsection{paragraph}{5}{\z@}%
+  {3.25ex \@plus1ex \@minus.2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\renewcommand\subparagraph{\@startsection{subparagraph}{6}{\parindent}%
+  {3.25ex \@plus1ex \@minus .2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\def\toclevel@subsubsubsection{4}
+\def\toclevel@paragraph{5}
+\def\toclevel@paragraph{6}
+\def\l@subsubsubsection{\@dottedtocline{4}{7em}{4em}}
+\def\l@paragraph{\@dottedtocline{5}{10em}{5em}}
+\def\l@subparagraph{\@dottedtocline{6}{14em}{6em}}
+\makeatother
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+
+\setlist[enumerate]{itemsep=0mm}
+%_____________________________|___________________________|_____________________________%
+%                             |                           |                             %
+%-----------------------------| ZDE VYPLNIT UDAJE O PRACI |-----------------------------%
+%_____________________________|___________________________|_____________________________%
+%                             
+
+\newcommand{\nazev}{MĚŘENÍ MALÝCH PROUDŮ}                                                        %
+\newcommand{\jmeno}{Jakub Dvořák}                                                     %
+\newcommand{\datum}{18.10.2020}                                                              %
+%---------------------------------------------------------------------------------------%
+
+
+%-----------------------------| POUŽITÁ MAKRA |-----------------------------%
+
+%\newcommand{\zkratka}{ve výsledku se mi napíše tenhle text}
+%\newcommand{}{}
+%\newcommand{}{}
+%\newcommand{}{}
+\newcommand{\sub}[1]{$_\textrm{#1}$}
+\newcommand{\texp}[1]{$^\textrm{#1}$}
+
+%_______________________________________________________________________________________%
+%_______________________________________________________________________________________%
+
+
+%----------------------------------- KONEC PREAMBULE -----------------------------------%
+
+
+
+
+
+
+%-------------------------------------- DOKUMENT --------------------------------------%
+%______________________________________________________________________________________%
+\begin{document} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setcounter{page}{0} %cislo strany
+\pagestyle{empty} %stranku necislovat
+
+%prostredi pro grafy a schemata \begin{graf} \begin{schema}
+\newfloat{schema}{htbp}{schema}\floatname{schema}{Schéma}
+\newfloat{graf}{htbp}{graf}\floatname{graf}{Graf}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+            
+        \Huge
+        \textbf{\nazev}
+            
+        \vspace{0.5cm}
+        \LARGE
+            
+        \vspace{1.5cm}
+            
+        \textbf{\jmeno}
+            
+        \vfill
+            
+        \vspace{0.8cm}
+            
+        \Large
+            
+        \datum\\
+        \vspace*{.5cm}
+        \includegraphics[width=.4\textwidth]{logo-cvut-fee.png}\\
+    \end{center}
+\end{titlepage}
+
+% --- definice zapati a~cislovani ---
+\newpage 
+\pagestyle{fancy}                                       %vlastni zahlavi/zapati
+\renewcommand{\headrulewidth}{0pt}                      %bez linky v~zahlavi
+\renewcommand{\footrulewidth}{.5pt}                    %linka v~zapati - optional
+\lhead{}       \chead{} \rhead{}                        %pole zahlavi (prazdna)
+\lfoot{\nazev} \cfoot{} \rfoot{\thepage}   %pole zapati
+
+
+%------------------------------------ VLASTNÍ TEXT ------------------------------------%
+
+
+
+\section{Úkol měření}
+\label{zadani}
+\begin{enumerate}
+    \item V zapojení podle obr. 1 změřte proud germaniovou diodou v propustném směru v oblasti malých napětí (20 až 100 mV) v pěti bodech charakteristiky:\label{jedna}
+    \begin{enumerate}[label=\alph*)]
+        \item analogovým mikroampérmetrem,\label{analog}
+        \item číslicovým mikroampérmetrem na různých rozsazích,\label{digital}
+        \item pomocí převodníku proud - napětí s operačním zesilovačem, u něhož před měřením určete velikost odporu zpětnovazebního rezistoru R tak, aby převod proud - napětí byl 10\texp{-5} A/V.
+    \end{enumerate}
+    \item Naměřené hodnoty vyneste do společného grafu.
+    \item Při měření dle \ref{jedna}\ref{analog} a \ref{jedna}\ref{digital} určete chybu metody způsobenou vnitřním odporem ampérmetru.
+    \item Z naměřených hodnot určete \textbf{vnitřní odpory použitých mikroampérmetrů}.
+\end{enumerate}
+
+\section{Schéma zapojení}
+\label{schema_zapojeni}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.8\textwidth]{schema.png}
+    \caption{Zapojení pro měření malých proudů \cite{navod}}
+    \label{fig:schema}
+\end{figure}
+
+
+\section{Seznam použitých přístrojů}
+\begin{itemize}
+    \item 
+\end{itemize}
+
+\section{Teoretický úvod}
+
+
+
+\section{Naměřené hodnoty}
+
+
+
+\section{Zpracování naměřených hodnot}
+
+
+\section{Závěrečné vyhodnocení}
+
+
+
+%--- LITERATURA a~ZDROJE (povinne) ---
+\clearpage
+\renewcommand{\refname}{Seznam použité literatury a~zdrojů informací} 
+%\section*{Seznam použité literatury a~zdrojů informací}
+\phantomsection %pridej odkaz do PDF zalozek
+\addcontentsline{toc}{section}{Seznam použité literatury a~zdrojů informací}
+
+\begin{thebibliography}{99}
+
+%----------------------------------------------------
+\subsection*{Seznam použitých internetových zdrojů}
+    \bibitem{navod} Návod k laboratorní úloze
+    
+\end{thebibliography}
+
+\end{document}
