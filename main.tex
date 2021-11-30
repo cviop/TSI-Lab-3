@@ -32,6 +32,14 @@
 
 %----------------------------------- KONEC PREAMBULE -----------------------------------%
 
+
+\newcommand{\nazev}{Měření parametrů vyšších komunikačních vrstev internetové přípojky}
+\newcommand{\jmeno}{Jakub Dvořák}
+\newcommand{\datum}{\today}
+
+
+
+
 \begin{document} 
 
 \setcounter{page}{0} %cislo strany
@@ -42,9 +50,7 @@
 \newfloat{graf}{htbp}{graf}\floatname{graf}{Graf}
 
 
-\newcommand{\nazev}{Měření parametrů vyšších komunikačních vrstev internetové přípojky}
-\newcommand{\jmeno}{Jakub Dvořák}
-\newcommand{\datum}{\today}
+
 
 
 
@@ -74,13 +80,15 @@
     \end{center}
 \end{titlepage}
 
+
 % --- definice zapati a~cislovani ---
 \newpage 
 \pagestyle{fancy}                                       %vlastni zahlavi/zapati
 \renewcommand{\headrulewidth}{0pt}                      %bez linky v~zahlavi
-\renewcommand{\footrulewidth}{.5pt}                    %linka v~zapati - optional
+\renewcommand{\footrulewidth}{.5pt}                     %linka v~zapati - optional
 \lhead{}       \chead{} \rhead{}                        %pole zahlavi (prazdna)
 \lfoot{\nazev} \cfoot{} \rfoot{\thepage}   %pole zapati
+
 
 
 %------------------------------------ VLASTNÍ TEXT ------------------------------------%
@@ -104,21 +112,23 @@ Jak je patrné z~grafu \ref{fig:up}, uplink mé domácí přípojky je stabilní
 \end{graf}
 
 
-
 \subsection*{Podmínky měření}
 Síť je tvořena centrálním modemem/routerem Compal~CH7465. Přes port 1000Base-T je připojen TP-LINK Archer~C6 nastavený jako switch. Počítač, na kterém probíhalo měření, byl připojen k~tomuto prvku přes WiFi připojení 802.11ac
 
 Měření probíhalo na prohlížeči Google Chrome
+
 
 \subsection*{Zhodnocení vhodnosti internetové přípojky pro NGA a~zařazení do příslušné NGA kategorie}
 Síť je stabilní a~v~zásadě omezena primárně vzdáleností switche od měřicího počítače. Rychlost internetové přípojky ve směru downstream je tedy dostatečná a~splňuje parametry přípojky NGA~30+. Stále se bohužel jedná o~velice nesymetrický tarif, kde je rychlost odesílání dat více než desetkrát nižší jak rychlost stahování. Podle Pokynů~EU tedy přípojka resp. tarif nesplňuje požadavek NGA~100+ na rychlost ve vzestupném směru, která by měla být minimálně třetinová oproti rychlosti v~sestupném směru.
 
 Přípojku lze tedy označit jako NGA
 
+
 \subsection*{Zhodnocení vhodnosti použité přenosové technologie k~poskytovateli připojení pro koncept NGA}
 Použitá technologie přípojky splňuje podmínku \uv{přístupové sítě z~optických vláken (FTTx)}
 
 \subsection*{Kontrolní otázky}
+
 \subsubsection*{Proč o~kvalitě internetové přípojky a~obecněji i o~poskytované přenosové službě, má pro koncového uživatele větší vypovídající hodnotu běžně dostupná rychlost, než rychlost poskytnutá diagnostikou síťového prvku.}
 Jedná se o~parametr přenosové rychlosti, jak se jeví koncovému uživateli. Je v~ní zahrnuta jak výkonnost přípojky, tak výkonnost komunikační sítě poskytovatele.
 
