@@ -153,15 +153,41 @@
 %------------------------------------ VLASTNÍ TEXT ------------------------------------%
 
 \subsection*{Zhodnocení naměřených hodnot}
+Jak je patrné z grafu \ref{fig:up}, uplink mé domácí přípojky je stabilní a jen výjimečně klesá pod inzerovanou hodnotu 20~Mbit/s. Naopak downlink je mnohem nižší, než kolik udává zprostředkovatel služby. Takto výrazně nižší rychlost je dána velkou vzdáleností počítače od switche, které jsou navíc odděleny podlahou. 
+
+
+\begin{graf}[hbtp]
+  \centering
+  \includegraphics[width = .6\textwidth]{tsi_uplink.pdf}
+  \caption{Naměřené rychlosti ve směru upstream}
+  \label{fig:up}
+\end{graf}
+
+\begin{graf}[hbtp]
+  \centering
+  \includegraphics[width = .6\textwidth]{tsi_downlink.pdf}
+  \caption{Naměřené rychlosti ve směru downstream}
+  \label{fig:down}
+\end{graf}
+
 
 
 \subsection*{Podmínky měření}
+Síť je tvořena centrálním modemem/routerem Compal CH7465. Přes port 1000Base-T je připojen TP-LINK Archer C6 nastavený jako switch. Počítač, na kterém probíhalo měření, byl připojen k tomuto prvku přes WiFi připojení 802.11ac
+
+Měření probíhalo na prohlížeči Google Chrome
 
 \subsection*{Zhodnocení vhodnosti internetové přípojky pro NGA a~zařazení do příslušné NGA kategorie}
+Síť je stabilní a v zásadě omezena primárně vzdáleností switche od měřicího počítače. Rychlost internetové přípojky ve směru downstream je tedy dostatečná a splňuje parametry přípojky NGA 30+. Stále se bohužel jedná o velice nesymetrický tarif, kde je rychlost odesílání dat více než desetkrát nižší jak rychlost stahování. Podle Pokynů EU tedy přípojka resp. tarif nesplňuje požadavek NGA 100+ na rychlost ve vzestupném směru, která by měla být minimálně třetinová oproti rychlosti v sestupném směru.
+
+Přípojku lze tedy označit jako NGA
 
 \subsection*{Zhodnocení vhodnosti použité přenosové technologie k~poskytovateli připojení pro koncept NGA}
 
 \subsection*{Kontrolní otázky}
 \subsubsection*{Proč o kvalitě internetové přípojky a obecněji i o poskytované přenosové službě, má pro koncového uživatele větší vypovídající hodnotu běžně dostupná rychlost, než rychlost poskytnutá diagnostikou síťového prvku.}
+Jedná se o parametr přenosové rychlosti, jak se jeví koncovému uživateli. Je v ní zahrnuta jak výkonnost přípojky, tak výkonnost komunikační sítě poskytovatele.
+
 \subsubsection*{Nabízí Váš poskytovatel tarif/typ připojení, které by mohlo splňovat podmínky přípojek NGA 100+? Pokud to lze dohledat, uveďte neakční cenu a technologii.}
+Pevný internet 30~Mbps - 449~Kč\footnote{\url{https://www.vodafone.cz/_sys_/FileStorage/download/1/794/prehled-tarifu-a-sluzeb.pdf}}
 \end{document}
